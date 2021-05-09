@@ -27,9 +27,7 @@ const DetailsPage = ({ navigation }) => {
     return (
         <ScrollView>
             <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center', backgroundColor: 'white'}}>
-                {/* <Text> { contact.name } </Text> */}
                 <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center',  width: '100%', height: 300}}>
-                {/* Top View */}
                     <View> 
                         <Image
                         style={{width:200, height:200}} 

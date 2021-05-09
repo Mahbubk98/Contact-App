@@ -15,13 +15,9 @@ import { getContacts } from '../services/ContactService';
 import { AppStateContext} from '../providers/AppStateProvider'
 
 const ContactPage = ({navigation}) => { 
-    // const [contacts, setContacts] = useState([])
+
     const {contacts} = useContext(AppStateContext)
     const [listData, setListData] = useState(null);
-
-    // useEffect(() => {
-    //     getContactsSaveState()
-    //     }, [null]);
 
     useEffect(() => {
         if (contacts) {
@@ -44,14 +40,7 @@ const ContactPage = ({navigation}) => {
         }
     }, [contacts])
 
-    // getContactsSaveState = () => {
-    //     getContacts().then((response) => {
-    //         setContacts(response.data)
-    //     })
-    // }
-     
     return (
-        // <SafeAreaView style={{ backgroundColor: 'white', flex: 1, alignItems: 'center', justifyContent: 'center' }}>
             <SectionList
                 refreshing={listData==null || listData.length ==0}
                 sections={listData}
@@ -73,9 +62,6 @@ const ContactPage = ({navigation}) => {
                     </View>
                 )}
             />
-                
-        // </SafeAreaView>
-    
     
     )
     
@@ -100,7 +86,7 @@ const ContactRow = ({contact}) => {
                         <Text style={{ fontSize: 20}}>
                                 {contact.name}
                         </Text>
-                        <Text style={{fontSize: 15, color: 'gainsboro'}}>
+                        <Text style={{fontSize: 15, color: 'lightslategray'}}>
                             {contact.companyName}
                         </Text>
                     </View>
@@ -110,10 +96,5 @@ const ContactRow = ({contact}) => {
         </TouchableOpacity>
     )
 }
-// const styles = StyleSheet.create({
-//     container: {
-//         textAlign: 'center'
-        
-//     }
-//   });
+
 export default ContactPage

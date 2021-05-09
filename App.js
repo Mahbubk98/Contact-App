@@ -37,34 +37,17 @@ import {
 const Stack = createStackNavigator();
 
 const App: () => Node = () => {
-  // const isDarkMode = useColorScheme() === 'dark';
-
-  // const backgroundStyle = {
-  //   backgroundColor: isDarkMode ? Colors.darker : Colors.lighter,
-  // };
 
   return (
-    // <SafeAreaView style={backgroundStyle}>
-    //   <StatusBar barStyle={isDarkMode ? 'light-content' : 'dark-content'} />
+
     <AppStateProvider>
       <NavigationContainer>
         <Stack.Navigator initialRouteName="Contacts">
           <Stack.Screen name="Contacts" component={ContactPage} />
           <Stack.Screen name="Details" component={DetailsPage} />
         </Stack.Navigator> 
-        {/* <ScrollView
-          contentInsetAdjustmentBehavior="automatic"
-          style={backgroundStyle}>
-          <View
-            style={{
-              backgroundColor: isDarkMode ? Colors.black : Colors.white,
-            }}>
-              <ContactPage/>
-          </View>
-        </ScrollView> */}
       </NavigationContainer>
     </AppStateProvider>
-    // </SafeAreaView>
   );
 };
 
